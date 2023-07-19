@@ -1,6 +1,6 @@
 require('dotenv').config();
 const swaggerUi = require("swagger-ui-express")
-const swaggerDocument = require("./swagger.json")
+const swaggerDocument = require("./configs/swagger.json")
 const express = require('express')
 const mongoose = require('mongoose')
 const Book = require("./models/books");
