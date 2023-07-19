@@ -21,6 +21,7 @@ const connectDB = async () => {
 
 //Routes go here
 app.get('/', (req,res) => {
+  console.log('hello')
     res.send({ title: 'Books' });
 })
 
