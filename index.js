@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+const swaggerUi = require("swagger-ui-express")
+const swaggerDocument = require("./configs/swagger.json")
 const express = require('express')
 const mongoose = require('mongoose')
 const Book = require("./models/books");
@@ -52,6 +53,8 @@ app.get('/add-note', async (req,res) => {
     console.log("err", + error);
   }
 })
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 //Connect to the database before listening
 connectDB().then(() => {
